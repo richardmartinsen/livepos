@@ -1,0 +1,30 @@
+<!--<div class="page_title">Biler</div>-->
+<div bp-layout="row" style="margin-top: 10px; margin-bottom: 10px">
+	<div bp-layout="col 12">
+		<form [formGroup]="searchForm" class="input">
+			<input aria-label="Søk" placeholder="Søk i biler" formControlName="search" />
+		</form>
+	</div>
+</div>
+
+<div class="car-item"
+     tabindex="0"
+     style="display: flex;
+            font-weight: bold;
+            border-bottom: solid 1px" >
+  <div class="cell" >Kjennemerke</div>
+  <div class="cell" >Type</div>
+  <div class="cell" >Endre/Slett</div>
+</div>
+
+<div class="car-list">
+  <car-item
+    *ngFor="let car of cars | async"
+    [car]="car"
+    (remove)="remove.emit(car)">
+  </car-item>
+</div>
+
+<button md-fab class="fab-bottom-right" (click)="showCreate()">
+  <md-icon>add</md-icon>
+</button>

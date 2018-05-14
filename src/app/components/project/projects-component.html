@@ -1,0 +1,52 @@
+<md-tab-group style="margin-top: 10px">
+
+  <md-tab label="Kalender">
+
+    <div *ngIf="authService.getIsDirigentOnly() | async" class="g-row">
+      <project-user-calendar>
+        Loading...
+      </project-user-calendar>
+    </div>
+
+    <div *ngIf="authService.getIsAdmin() | async" class="g-row">
+      <project-admin-calendar>
+        Loading...
+      </project-admin-calendar>
+    </div>
+
+  </md-tab>
+
+  <md-tab label="Liste">
+
+    <div *ngIf="authService.getIsDirigentOnly() | async" class="g-row">
+      <div class="g-col">
+        <project-user-list
+          [projects]="projectService.projects">
+        </project-user-list>
+      </div>
+    </div>
+
+    <div *ngIf="authService.getIsAdmin() | async" class="g-row">
+      <div class="g-col">
+        <project-admin-list
+          [projects]="projectService.projects"
+          (remove)="remove($event)">
+        </project-admin-list>
+      </div>
+    </div>
+
+  </md-tab>
+
+</md-tab-group>
+
+<div *ngIf="authService.getIsDirigentOnly() | async" class="g-row">
+  <button md-fab class="fab-bottom-right" (click)="showCreateUser()">
+    <md-icon>add</md-icon>
+  </button>
+</div>
+
+<div *ngIf="authService.getIsAdmin() | async" class="g-row">
+  <button md-fab class="fab-bottom-right" (click)="showCreate()">
+    <md-icon>add</md-icon>
+  </button>
+</div>

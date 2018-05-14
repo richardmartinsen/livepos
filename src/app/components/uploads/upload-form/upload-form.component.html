@@ -1,0 +1,15 @@
+<div *ngIf="currentUpload">
+    <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
+    Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+</div>
+
+<div class="box" style="margin-top: 10px">
+  <label>
+    <input type="file" (change)="detectFiles($event)" multiple>
+  </label>
+
+  <button md-raised-button color="accent" class="pull-right"
+          [disabled]="!selectedFiles"
+          (click)="uploadFiles()">Last opp
+  </button>
+</div>

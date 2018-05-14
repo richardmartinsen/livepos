@@ -1,0 +1,32 @@
+@import
+"~minx/src/settings",
+"~minx/src/functions",
+"~minx/src/mixins";
+
+//=====================================
+//  CELLS
+//-------------------------------------
+.cell {
+  &:last-child {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: left;
+  }
+
+  width: 33%;
+
+  @include media-query(540) {
+    width: 20%;
+  }
+
+  &:first-child {
+    padding-right: 20px;
+  }
+
+  &:nth-child(2) {
+    flex: 1;
+    padding-right: 30px;
+    overflow: hidden;
+  }
+
+}

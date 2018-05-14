@@ -1,0 +1,25 @@
+<div class="row datorad" style="margin-top: 10px; margin-bottom: 10px">
+    <div class="col-md-2">
+      <form [formGroup]="searchForm" class="input">
+      <input aria-label="Søk" placeholder="Søk i oppdrag" formControlName="search" />
+      </form>
+    </div>
+</div>
+<div class="project-user-item"
+     tabindex="0"
+     style="display: flex;
+            font-weight: bold;
+            border-bottom: solid 1px" >
+  <div class="cell" >Start Dato/tid</div>
+  <div class="cell" >Slutt Dato/tid</div>
+  <div class="cell" >Adresse</div>
+  <div class="cell showOnLargeScreen" >Kunde</div>
+  <div class="cell" style="margin-left: 20px">Vis</div>
+</div>
+
+<div class="project-user-list">
+  <project-user-item
+    *ngFor="let project of projects | async"
+    [project]="project">
+  </project-user-item>
+</div>

@@ -1,0 +1,19 @@
+<div class="list-item"
+     tabindex="0"
+     style="display: flex" >
+
+  <div class="cell" >{{ project.start }}</div>
+  <div class="cell" >{{ project.end }}</div>
+  <div class="cell" >{{ project.address }}</div>
+  <div class="cell showOnLargeScreen" >{{ project.title }}</div>
+
+  <div class="cell" style="margin-left: 20px;padding-left: 10px">
+    <button
+      md-icon-button
+      (click)="showEdit(project)"
+      aria-label="Vis oppdrag"
+      class="list-item__button">
+      <span class="icon material-icons">info_outline</span>
+    </button>
+  </div>
+</div>

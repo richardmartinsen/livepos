@@ -1,0 +1,28 @@
+  <div class="modal-header mheader">
+    <h4 class="page_title">{{title}}</h4>
+  </div>
+
+  <div class="mcontent">
+
+        <label style="min-width: 50px">Start</label>
+        <md2-datepicker style="width: 50px" name="startDate" [type]="datePickerType" [(ngModel)]="startDate" [required]="true" [disabled]="false"
+          #dateControl="ngModel">
+        </md2-datepicker>
+        <div>
+          <label style="min-width: 50px">Slutt</label>
+          <md2-datepicker style="width: 75px" name="endDate" [type]="datePickerType" [(ngModel)]="endDate" [required]="true" [disabled]="false"
+            #dateControl="ngModel">
+          </md2-datepicker>
+        </div>
+
+    <div class="box-error2 boxError2Size" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+    <div style="height: 40px" *ngIf="!errorMessage"></div>
+
+
+
+  </div>
+  <div class="mfooter">
+    <button md-raised-button color="accent" class="ok-button"
+      (click)="save()">Lagre</button>
+    <button md-raised-button color="accent" class="cancel-button pull-right" (click)="close()">Lukk</button>
+  </div>

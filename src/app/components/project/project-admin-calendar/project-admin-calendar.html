@@ -1,0 +1,6 @@
+
+<div style="margin-top: 20px">
+  <p-schedule [events]="events" locale="nb" [header]="header" [eventRender]="eventRender" [defaultDate]="defaultDate" [eventLimit]="4" [editable]="true"
+   (onDayClick)="create($event)" (onEventClick)="edit($event)" (onEventResize)="eventDropped($event)" (onEventDrop)="eventDropped($event)" >
+  </p-schedule>
+</div>

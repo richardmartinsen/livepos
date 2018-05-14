@@ -1,0 +1,46 @@
+$placeholder-color: #A9A9A9;
+
+.boxError2Size {
+  height: 40px;
+}
+
+.box-error2 {
+  border: 1px solid #edb4b5;
+  border-radius: 3px;
+  background: #fff2f2 url(assets/images/ico-error2.png) no-repeat 10px 10px;
+  padding: 10px 10px 10px 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.tj-label {
+  display: inline-block;
+  min-width: 100px;
+  line-height: 32px;
+  vertical-align: top;
+}
+
+.tj-input {
+  width: 300px;
+}
+
+.tj-select {
+  width: 50%;
+}
+
+@media only screen and (max-width: 540px) {
+
+  input, .tj-input {
+    line-height: 28px;
+    width: 100%;
+  }
+
+  .tj-label{
+    float: left;
+  }
+
+  .tj-select {
+    width: 100%;
+  }
+
+}

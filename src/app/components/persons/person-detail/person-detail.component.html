@@ -1,0 +1,52 @@
+<div class="modal-header">
+  <h4 class="page_title">{{title}}</h4>
+</div>
+<div class="modal-body">
+
+  <form [formGroup]="personForm">
+    <div>
+      <label class="tj-label" for="first_name">Fornavn</label>
+      <input class="tj-input" name="first_name" id="first_name" formControlName="first_name"/>
+    </div>
+
+    <div>
+      <label class="tj-label" for="last_name">Etternavn</label>
+      <input class="tj-input" name="last_name" id="last_name" formControlName="last_name"/>
+    </div>
+
+    <div>
+      <label class="tj-label" for="phone">Mobil</label>
+      <input class="tj-input" name="phone" id="phone" formControlName="phone"/>
+    </div>
+
+    <div>
+      <label class="tj-label" for="email">E-mail</label>
+      <input class="tj-input" [disabled]="person.$key?'' : null" length="50" name="email" id="email" formControlName="email"/>
+    </div>
+
+    <div>
+      <label class="tj-label" *ngIf="!person.$key" for="password">Passord</label>
+      <input class="tj-input" *ngIf="!person.$key" name="password" length="50" id="password" formControlName="password"/>
+    </div>
+
+  </form>
+
+  <div *ngIf="authService.getIsSuperuser() | async">
+    <label class="tj-label" for="password">Rolle</label>
+    <md-select style="width: 200px" id="authLevelVariable" name="authLevelVariable" [(ngModel)]="authLevel">
+      <md-option class="tj-input" *ngFor="let authLevel of authLevels" [value]="authLevel">{{authLevel}}</md-option>
+    </md-select>
+  </div>
+
+  <div *ngIf="authService.getIsAdminOnly() | async">
+    <label class="my_label" for="password">Rolle</label>
+    <span>Dirigent</span>
+  </div>
+
+  <div class="box-error2 boxError2Size" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+  <div style="height: 40px" *ngIf="!errorMessage"></div>
+
+  <button md-raised-button color="accent" (click)="save()">Lagre</button>
+  <button md-raised-button color="accent" class="pull-right" (click)="close()">Lukk</button>
+
+</div>

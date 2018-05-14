@@ -1,0 +1,28 @@
+<div class="list-item"
+     tabindex="0"
+     style="display: flex" >
+
+  <div class="cell" >{{ person.first_name }}</div>
+  <div class="cell" >{{ person.last_name }}</div>
+  <div class="cell showOnLargeScreen" >{{ person.email }}</div>
+
+  <div class="cell" style="margin-right: 10px; min-width: 100px">
+    <button
+      md-icon-button
+      color="raised"
+      (click)="showEdit(person)"
+      aria-label="Endre ansatt"
+      class="list-item__button"
+      type="button">
+      <span class="icon material-icons">edit</span>
+    </button>
+      <button
+        md-icon-button
+        (click)="remove.emit()"
+        aria-label="Slett ansatt"
+        class="list-item__button"
+        type="button">
+        <span class="icon material-icons">delete</span>
+      </button>
+  </div>
+</div>

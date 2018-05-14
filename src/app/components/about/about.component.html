@@ -1,0 +1,35 @@
+<div style="margin: 20px">
+
+  <h1>LivePos (v.0.1.0-beta)</h1>
+  <div style="margin-top: 20px; margin-bottom: 20px">
+    Første testversjon.
+    En test for å hente ut gps posisjoner og lagre de i firebase
+  </div>
+
+  <div style="margin-top: 20px">Logget inn som: {{ authService.getEmail() }}</div>
+  <div style="margin-top: 20px">Rolle: {{ authService.getAuthLevel()  | async }}</div>
+
+
+  <div *ngIf="authService.getIsSuperuser() | async " style="margin-top: 20px">
+    <br>
+    <br>
+    <h2> Testverktøy! </h2>
+    <br>
+    <div>
+      <div style="margin-right: 50px">Klikk her for å <b>slette</b> innhold i databasen: </div>
+      <button md-raised-button color="accent" (click)="deleteProjects()">Prosjekter</button>
+      <button md-raised-button color="accent" (click)="deletePersons()">Personer</button>
+      <button md-raised-button color="accent" (click)="deleteCars()">Biler</button>
+      <button md-raised-button color="accent" (click)="deletePos()">Pos</button>
+    </div>
+    <br>
+    <div>
+      <div style="margin-right: 95px">Klikk her for å <b>legge inn</b> test data:</div>
+      <button md-raised-button color="accent" (click)="initProjects()">Prosjekter</button>
+      <button md-raised-button color="accent" (click)="initPersons()">Personer</button>
+      <button md-raised-button color="accent" (click)="initCars()">Biler</button>
+      <button md-raised-button color="accent" (click)="initPos()">Pos</button>
+    </div>
+  </div>
+
+</div>

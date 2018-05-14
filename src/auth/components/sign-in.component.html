@@ -1,0 +1,12 @@
+<h1 class="sign-in__heading" style="margin-top: 20px">Logg inn med e-post adresse og passord</h1>
+<form [formGroup]="loginForm" novalidate>
+  <label for="email">E-post</label>
+  <input type="email" style="width: 300px" name="email" id="email" formControlName="email" maxlength="50"/>
+  <label for="password">Passord</label>
+  <input type="password" style="width: 300px" name="password" id="password" formControlName="password" maxlength="50"/>
+</form>
+
+<div *ngIf="errorMessage" style="color:red" >{{errorMessage}}</div>
+<div style="height: 40px" *ngIf="!errorMessage"></div>
+
+<button md-raised-button color="accent" style="margin-top: 10px" (click)="signIn()" >Logg inn</button>

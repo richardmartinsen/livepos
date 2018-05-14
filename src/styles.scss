@@ -1,0 +1,35 @@
+@import
+'~minx/src/settings',
+'~minx/src/functions',
+'~minx/src/mixins',
+'~minx/src/reset',
+'~minx/src/elements',
+'~minx/src/settings',
+'~minx/src/functions',
+'~minx/src/mixins';
+
+@import 'styles/_colors',
+'styles/_layout',
+'styles/components/_buttons',
+'styles/components/_inputs',
+'styles/list-item',
+'styles/material2-app-theme';
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+[hidden] {
+  display: none !important;
+}
+
+::selection {
+  background:  #ccc;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+::selection {
+  background:  #ccc;
+}

@@ -1,0 +1,44 @@
+<div class="modal-header">
+  <h4 class="page_title">Send varsling</h4>
+</div>
+
+<div style="min-height: 300px;min-width: 300px; position: relative; margin-top: 5px">
+
+  <div>
+    For å sende varsel må minst èn dirigent være <br>
+    registrert på oppdraget og enten SMS eller <br>
+    E-mail må være valgt. Varsel vil bli sendt til <br>
+    første registrerte dirigent.
+  </div>
+  <label style="margin-top: 10px">Send med</label>
+
+  <md-slide-toggle style="margin-top: 20px; margin-left: 20px"
+                   name="smsAlert"
+                   id="smsAlert"
+                   [(ngModel)]="smsAlert"
+                   [checked]="smsAlert">SMS
+  </md-slide-toggle>
+
+  <md-slide-toggle style="margin-top: 20px"
+                   name="emailAlert"
+                   id="emailAlert"
+                   [(ngModel)]="emailAlert"
+                   [checked]="emailAlert">E-post
+  </md-slide-toggle>
+
+  <br>
+  <label style="margin-top: 10px">Send til</label>
+  <span *ngIf="!personToAlert" style="margin-top: 30px">(Ingen dirigenter registrert)</span>
+  <span *ngIf="personToAlert" style="margin-top: 30px">{{personToAlert.email}}</span>
+
+  <br>
+  <label class="my_label" for="not-message" style="margin-top: 10px">Sist sendt</label>
+  <textarea id="not-message" style="margin-bottom: 40px">{{project.notificationMessage}}</textarea>
+
+  <br>
+  <div class="box-error2 boxError2Size" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+
+  <button md-raised-button color="accent" [disabled]="(!smsAlert && !emailAlert) ? '' : null"  (click)="send()">Send</button>
+  <button md-raised-button color="accent" class="pull-right" (click)="close()">Lukk</button>
+
+</div>

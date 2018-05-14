@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h4 class="page_title">{{title}}</h4>
+</div>
+<div class="modal-body">
+
+  <form [formGroup]="carForm">
+    <div>
+      <label class="tj_abel" for="licence">Kjennemerke</label>
+      <input class="tj-input" name="licence" id="licence" formControlName="licence"/>
+    </div>
+    <div>
+      <label class="tj-label" for="brand">Type</label>
+      <input class="tj-input" name="brand" id="brand" formControlName="brand"/>
+    </div>
+  </form>
+
+  <div class="box-error2 boxError2Size" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+  <div style="height: 40px" *ngIf="!errorMessage"></div>
+
+  <button md-raised-button color="accent" (click)="save()">Lagre</button>
+  <button md-raised-button color="accent" class="pull-right" (click)="close()">Lukk</button>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h4 class="page_title">{{title}}</h4>
+</div>
+<div class="modal-body">
+
+  <div>
+    Vi skal registrere pos
+  </div>
+
+  <div class="box-error2 boxError2Size" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+  <div style="height: 40px" *ngIf="!errorMessage"></div>
+
+  <button md-raised-button color="accent" (click)="start()">Start</button>
+  <button md-raised-button color="accent" class="pull-right" (click)="stop()">Stopp</button>
+
+</div>

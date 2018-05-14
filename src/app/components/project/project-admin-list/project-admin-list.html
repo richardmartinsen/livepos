@@ -1,0 +1,53 @@
+<md-slide-toggle style="margin-top: 20px" name="weekSelected" id="weekSelected" (change)="weekChanged()" [(ngModel)]="weekSelected"
+  [checked]="weekSelected">Dag/Uke</md-slide-toggle>
+
+<div *ngIf="!weekSelected" class="row datorad">
+  <div class="col-md-1">
+    <button md-fb (click)="subtractDate()">
+        <md-icon>keyboard_arrow_left</md-icon>
+      </button>
+  </div>
+  <div class="col-md-2" style="width: 130px">
+    <form [formGroup]="searchForm" class="input">
+      <input aria-label="Dato" formControlName="dato" />
+    </form>
+  </div>
+  <div class="col-md-1">
+    <button md-fb (click)="addDate()">
+        <md-icon>keyboard_arrow_right</md-icon>
+      </button>
+  </div>
+</div>
+
+<div *ngIf="weekSelected" class="row datorad">
+  <div class="col-md-1">
+    <button md-fb (click)="subtractWeek()">
+        <md-icon>keyboard_arrow_left</md-icon>
+      </button>
+  </div>
+  <div class="col-md-2">
+    <form [formGroup]="searchForm" class="input" style="width: 50px">
+      <input aria-label="uke" formControlName="uke" />
+    </form>
+  </div>
+  <div class="col-md-1">
+    <button md-fb (click)="addWeek()">
+        <md-icon>keyboard_arrow_right</md-icon>
+      </button>
+  </div>
+</div>
+
+<div class="project-admin-item" tabindex="0" style="display: flex;
+            font-weight: bold;
+            border-bottom: solid 1px">
+  <div class="cell">Start Dato/tid</div>
+  <div class="cell">Slutt Dato/tid</div>
+  <div class="cell">Adresse</div>
+  <div class="cell showOnLargeScreen">Kunde</div>
+  <div class="cell">Endre/Slett</div>
+</div>
+
+<div class="project-admin-list">
+  <project-admin-item *ngFor="let project of projects | async" [project]="project" (remove)="remove.emit(project)">
+  </project-admin-item>
+</div>

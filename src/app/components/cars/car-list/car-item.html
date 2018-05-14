@@ -1,0 +1,26 @@
+<div class="list-item"
+     tabindex="0"
+     style="display: flex" >
+
+  <div class="cell" >{{ car.licence }}</div>
+  <div class="cell" >{{ car.brand }}</div>
+
+  <div class="cell" style="margin-right: 10px; min-width: 100px">
+    <button
+      md-icon-button
+      (click)="showEdit(car)"
+      aria-label="Endre bil"
+      class="list-item__button"
+      type="button">
+      <span class="icon material-icons">edit</span>
+    </button>
+      <button
+        md-icon-button
+        (click)="remove.emit()"
+        aria-label="Slett bil"
+        class="list-item__button"
+        type="button">
+        <span class="icon material-icons">delete</span>
+      </button>
+  </div>
+</div>

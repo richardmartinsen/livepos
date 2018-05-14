@@ -1,0 +1,84 @@
+@import
+"~minx/src/settings",
+"~minx/src/functions",
+"~minx/src/mixins";
+
+//===================================================================
+//  LIST-ITEM
+//===================================================================
+
+.list-item {
+  margin-top: 10px;
+  display: flex;
+  outline: none;
+  border-bottom: 1px dotted #666;
+  height: 50px;
+  overflow: hidden;
+  color: #000;
+  font-size: rem(12px);
+  font-weight: 300;
+
+  @include media-query(540) {
+    font-size: rem(15px);
+  }
+}
+
+//=====================================
+//  CELLS
+//-------------------------------------
+.cell {
+  &:last-child {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: left;
+  }
+
+  width: 33%;
+
+  @include media-query(540) {
+    width: 20%;
+  }
+
+  &:first-child {
+    padding-right: 20px;
+  }
+
+  &:nth-child(4) {
+    flex: 1;
+    padding-right: 30px;
+    overflow: hidden;
+  }
+
+}
+
+
+//=====================================
+//  ICON BUTTONS
+//-------------------------------------
+.list-item__button {
+  @include button-base;
+  margin-left: 5px;
+  outline: none;
+  border: 0;
+  border-radius: 100px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  transform: translate(0, 0);
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.icon {
+  line-height: 40px !important;
+
+}
+
+.icon--active {
+  &, .list-item__button:hover & {
+    color: #85bf6b;
+  }
+}

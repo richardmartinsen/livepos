@@ -1,0 +1,130 @@
+  <div class="modal-header mheader">
+    <h4 class="page_title">{{title}}</h4>
+  </div>
+
+  <div class="mcontent">
+
+    <md-tab-group style="margin-top: 10px">
+      <md-tab label="Tid & sted">
+
+        <form [formGroup]="projectForm" style="margin-top: 20px" novalidate>
+          <div>
+            <label class="tj-label" for="project">Kunde</label>
+            <input class="tj-input" name="project" id="project" formControlName="project" />
+          </div>
+          <div>
+            <label class="tj-label" for="address">Adresse</label>
+            <input class="tj-input" name="address" id="address" formControlName="address" />
+          </div>
+        </form>
+        <label style="min-width: 100px">Start</label>
+        <md2-datepicker style="width: 50px" name="startDate" [type]="datePickerType" [(ngModel)]="startDate" [required]="true" [disabled]="false"
+          #dateControl="ngModel">
+        </md2-datepicker>
+        <div>
+          <label style="min-width: 100px">Slutt</label>
+          <md2-datepicker style="width: 75px" name="endDate" [type]="datePickerType" [(ngModel)]="endDate" [required]="true" [disabled]="false"
+            #dateControl="ngModel">
+          </md2-datepicker>
+        </div>
+        <div>
+          <md-checkbox
+          class="example-margin"
+          [(ngModel)]="repeat"
+          *ngIf="!editMode"
+          [align]="align"
+          [disabled]="disabled">
+            Gjenta
+          </md-checkbox>
+          <input class="tj-input" type="number" name="occurs" id="occurs" disable="true" [(ngModel)]="occurs" *ngIf="repeat"/>
+        </div>
+        <div>
+          <label style="margin-right: 18px; min-width: 90px">Bil</label>
+          <md-select class="tj-select" multiple placeholder="Velg bil" floatPlaceholder="never" name="car" id="car" [(ngModel)]="carStr">
+            <md-option *ngFor="let car of cars | async" [value]="car.licence">{{car.licence}}</md-option>
+          </md-select>
+        </div>
+
+        <div>
+          <label style="margin-right: 18px;margin-top: 10px; min-width: 100px">Dirigenter</label>
+          <md-select class="tj-select" multiple placeholder="Velg ansatt" floatPlaceholder="never" name="person" id="person" [(ngModel)]="personsStr">
+            <md-option *ngFor="let person of persons | async" [value]="person.email">{{person.first_name + " " +person.last_name}}
+            </md-option>
+          </md-select>
+        </div>
+
+        <span *ngIf="authService.getIsAdmin() | async" style="margin-bottom: 5px">
+          <md-slide-toggle style="margin-top: 20px"
+                           [disabled]="!complete()"
+                           name="released"
+                           id="released"
+                           [(ngModel)]="project.released"
+                           [checked]="released">Aktiv
+          </md-slide-toggle>
+
+          <button md-raised-button color="accent" [disabled]="!project.released ? '' : null" class="my_margin" (click)="showRelaseDialog()">Varsle...</button>
+
+          <div class="col-sm-3">
+            <label style="margin-right: 18px;margin-top: 10px; min-width: 100px">Ant Dir</label>
+            <form [formGroup]="projectForm">
+              <input class="form-control" type="number" name="numberStaff" value="1" min="1" max="20" id="numberStaff" required disable="true" formControlName="numberStaff" />
+            </form>
+          </div>
+      </span>
+
+      </md-tab>
+
+      <md-tab label="Oppmøte mm">
+        <label style="margin-top: 10px">Tid</label>
+        <md2-datepicker name="attendanceTime" [type]="datePickerType" [(ngModel)]="attendanceTime" [required]="false" [disabled]="false"
+          #dateControl="ngModel">
+        </md2-datepicker>
+        <form [formGroup]="projectForm" novalidate>
+          <div style="margin-top: 10px">
+            <label class="tj-label" for="attendancePlace">Sted</label>
+            <input class="tj-input" name="attendancePlace" id="attendancePlace" formControlName="attendancePlace" />
+          </div>
+          <div>
+            <form [formGroup]="projectForm" style="margin-top: 10px" novalidate>
+              <label class="tj-label" for="sign">Skilt</label>
+              <input class="tj-input" name="sign" id="sign" formControlName="sign" />
+            </form>
+          </div>
+          <div>
+            <label class="tj-label" for="customer">Kontaktpers.</label>
+            <input class="tj-input" name="customer" id="customer" formControlName="customer" />
+          </div>
+          <div>
+            <label>Beskrivelse</label>
+          <textarea rows="1" cols="1" formControlName="description"></textarea>
+          </div>
+        </form>
+      </md-tab>
+
+      <md-tab label="Vedlegg">
+        <form [formGroup]="projectForm" style="margin-top: 10px" novalidate>
+          <div *ngFor="let upload of uploads | async">
+            <upload-detail [upload]='upload'></upload-detail>
+          </div>
+          <!--
+          <loading-spinner *ngIf="showSpinner"></loading-spinner>
+        -->
+          <hr>
+
+          <upload-form [projectName]="project.title"></upload-form>
+        </form>
+      </md-tab>
+
+    </md-tab-group>
+
+    <div class="box-error2 boxError2Size" *ngIf="errorMessage" [innerHTML]="errorMessage"></div>
+    <div style="height: 40px" *ngIf="!errorMessage"></div>
+
+
+
+  </div>
+  <div class="mfooter">
+    <button md-raised-button color="accent" class="ok-button" *ngIf="authService.getIsAdmin() | async"
+      (click)="save()">Lagre</button>
+    <button md-raised-button color="accent" class="cancel-button pull-right" (click)="close()">Lukk</button>
+  </div>

@@ -1,0 +1,247 @@
+{
+  "car" : {
+    "-Ks42K2MnzkanxjoKSJg" : {
+      "brand" : "Testbil123",
+      "licence" : "qd"
+    },
+    "-Ks4KaBiJaaLHqpz2e3L" : {
+      "brand" : "Mazda2",
+      "licence" : "BR51123"
+    },
+    "-Ks4KaBkk9Bc8iVRgohZ" : {
+      "brand" : "Toyota",
+      "licence" : "DE65345"
+    },
+    "-Ks4KaBl0t5Frlx77swG" : {
+      "brand" : "Skoda Octavia",
+      "licence" : "UR12543"
+    },
+    "-Ks4KaBm58FKwSqeSw-Z" : {
+      "brand" : "Citroen",
+      "licence" : "EL12353"
+    },
+    "-Ks4KaBnqUqvAN9-wP52" : {
+      "brand" : "Nissan leaf",
+      "licence" : "EK53145"
+    }
+  },
+  "personell" : {
+    "-Ks4K_lsotS0E1anPOBz" : {
+      "authLevel" : 20,
+      "email" : "janni.hansen@my-mail-domain.com",
+      "first_name" : "Janni",
+      "last_name" : "Hansen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_lunuX1wAIJnutY" : {
+      "authLevel" : 20,
+      "email" : "sussi.olsen@my-mail-domain.com",
+      "first_name" : "Sussi",
+      "last_name" : "Olsen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_lw9dh-fGFvCY92" : {
+      "authLevel" : 20,
+      "email" : "therese.nilsen@my-mail-domain.com",
+      "first_name" : "Therese",
+      "last_name" : "Nilsen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_lxWJASxAdK11hd" : {
+      "authLevel" : 60,
+      "email" : "tomk.pilsen@my-mail-domain.com",
+      "first_name" : "Tom K",
+      "last_name" : "Pilsen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_lyZaQkce58Frpf" : {
+      "authLevel" : 20,
+      "email" : "gunnar.paulsen@my-mail-domain.com",
+      "first_name" : "Gunnar",
+      "last_name" : "Paulsen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_lzKt5Ta7zt3mn5" : {
+      "authLevel" : 20,
+      "email" : "robert.fransen@my-mail-domain.com",
+      "first_name" : "Robert",
+      "last_name" : "Fransen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_m-IYNPfX8lwM7y" : {
+      "authLevel" : 20,
+      "email" : "øyvind.frinsen@my-mail-domain.com",
+      "first_name" : "Øyvind",
+      "last_name" : "Frinsen",
+      "phone" : "12312312"
+    },
+    "-Ks4K_m0kaNzNcxwy-to" : {
+      "authLevel" : 20,
+      "email" : "lina.fronsen@my-mail-domain.com",
+      "first_name" : "Lina",
+      "last_name" : "Fronsen",
+      "phone" : "12312312"
+    },
+    "-Kuug9JF1tzo2UOpuW8S" : {
+      "authLevel" : 60,
+      "email" : "richard@martinsen.org",
+      "first_name" : "Richard",
+      "last_name" : "Martinsen",
+      "phone" : "92435000",
+      "uid" : ""
+    }
+  },
+  "projects" : {
+    "-KwGB4XwrUprbWxXEZc6" : {
+      "address" : "snerte",
+      "attendancePlace" : "",
+      "attendanceTime" : "Invalid date",
+      "car" : [ "BR51123", "DE65345" ],
+      "customer" : "",
+      "description" : "",
+      "end" : "2017-10-11 08:00",
+      "id" : "-KwGB4XwrUprbWxXEZc6",
+      "notificationMessage" : "Aldri",
+      "numberStaff" : 3,
+      "released" : true,
+      "responsible" : "",
+      "sign" : "",
+      "staff" : [ "sussi.olsen@my-mail-domain.com", "therese.nilsen@my-mail-domain.com" ],
+      "start" : "2017-10-08 01:00",
+      "title" : "tertefghfg",
+      "tramCourse" : ""
+    },
+    "-KwKk7tFzUkPZPj0W1Bm" : {
+      "address" : "Kirkeristen 2",
+      "attendancePlace" : "",
+      "attendanceTime" : "Invalid date",
+      "customer" : "",
+      "description" : "",
+      "end" : "2017-10-18T23:00:00",
+      "id" : "-KwKk7tFzUkPZPj0W1Bm",
+      "notificationMessage" : "Aldri",
+      "numberStaff" : 4,
+      "released" : true,
+      "responsible" : "",
+      "sign" : "",
+      "staff" : [ "janni.hansen@my-mail-domain.com", "sussi.olsen@my-mail-domain.com", "tomk.pilsen@my-mail-domain.com" ],
+      "start" : "2017-10-18T19:29:00",
+      "title" : "SVV 2",
+      "tramCourse" : ""
+    },
+    "-KwKkLhrO8vNezTj67QL" : {
+      "address" : "Kirkeristen 3",
+      "attendancePlace" : "",
+      "attendanceTime" : "Invalid date",
+      "customer" : "",
+      "description" : "",
+      "end" : "2017-10-17T20:28:00",
+      "id" : "-KwKkLhrO8vNezTj67QL",
+      "notificationMessage" : "Aldri",
+      "numberStaff" : 3,
+      "released" : true,
+      "responsible" : "",
+      "sign" : "",
+      "staff" : [ "janni.hansen@my-mail-domain.com", "sussi.olsen@my-mail-domain.com", "therese.nilsen@my-mail-domain.com", "gunnar.paulsen@my-mail-domain.com", "robert.fransen@my-mail-domain.com" ],
+      "start" : "2017-10-17T07:34:00",
+      "title" : "SVV 3",
+      "tramCourse" : ""
+    },
+    "-Kwvd3m1aUajQU-uq42o" : {
+      "address" : "tttk",
+      "attendancePlace" : "",
+      "attendanceTime" : "Invalid date",
+      "customer" : "",
+      "description" : "",
+      "end" : "2017-10-23T04:55:00",
+      "id" : "-Kwvd3m1aUajQU-uq42o",
+      "notificationMessage" : "Aldri",
+      "numberStaff" : 2,
+      "released" : true,
+      "responsible" : "",
+      "sign" : "",
+      "staff" : [ "sussi.olsen@my-mail-domain.com", "therese.nilsen@my-mail-domain.com" ],
+      "start" : "2017-10-20T16:15:00",
+      "title" : "ny",
+      "tramCourse" : ""
+    },
+    "-KxHs-ryYvB_wtMYkDNg" : {
+      "address" : "hh",
+      "attendancePlace" : "",
+      "attendanceTime" : "Invalid date",
+      "customer" : "",
+      "description" : "",
+      "end" : "2017-10-16T06:30:00",
+      "notificationMessage" : "Aldri",
+      "numberStaff" : 2,
+      "released" : false,
+      "responsible" : "",
+      "sign" : "",
+      "start" : "2017-10-16T00:00:00",
+      "title" : "hh",
+      "tramCourse" : ""
+    }
+  },
+  "uploads" : {
+    "-KpU0BpPBNmDHtMYW6V5" : {
+      "name" : "Fil 1- kort navn.pdf",
+      "progress" : 100,
+      "projectName" : "Costro øst",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FFil%201-%20kort%20navn.pdf?alt=media&token=ffb0675f-785a-4b20-a190-c1582bfc6b45"
+    },
+    "-KpU0Bquom_3F2IqWhJ1" : {
+      "name" : "Fil 2 - Laaaaaaaaaaangt navn.pdf",
+      "progress" : 100,
+      "projectName" : "Costro øst",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FFil%202%20-%20Laaaaaaaaaaangt%20navn.pdf?alt=media&token=3239a651-ae5b-4f8b-abcb-494ee766cc19"
+    },
+    "-KpUll1f0OwV13okDKRw" : {
+      "name" : "Del 1_Konkurransegrunnlag.pdf",
+      "progress" : 100,
+      "projectName" : "Nytt prosjekt",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FDel%201_Konkurransegrunnlag.pdf?alt=media&token=78e1cea9-ad38-4e8d-8126-aeb5dd61e736"
+    },
+    "-KpUls7MAHkN4VTjEAKB" : {
+      "name" : "Agenda Ciber Norge AS.pdf",
+      "progress" : 100,
+      "projectName" : "Nytt prosjekt",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FAgenda%20Ciber%20Norge%20AS.pdf?alt=media&token=702ef66f-75f0-4ecb-afdb-859f0bba7ca0"
+    },
+    "-Kr61qeJMTckrIBSMVF-" : {
+      "name" : "Skjema for egenmelding.pdf",
+      "progress" : 100,
+      "projectName" : "Ciber",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FSkjema%20for%20egenmelding.pdf?alt=media&token=2bdea2de-9a68-4995-a61b-212f507222dd"
+    },
+    "-KrAbbtLp1LwVJY-YNw9" : {
+      "name" : "DagligvarehandelOgMat2013.pdf",
+      "progress" : 100,
+      "projectName" : "Njaals skole",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FDagligvarehandelOgMat2013.pdf?alt=media&token=ddc44846-2bf1-430b-9f07-ca6118ab1f63"
+    },
+    "-Ks3BDYR-4_bLdMgeyf-" : {
+      "name" : "fagpraksis-frontend.png",
+      "progress" : 100,
+      "projectName" : "Ruter",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2Ffagpraksis-frontend.png?alt=media&token=3f06c0e3-1ba5-4808-94cf-472ab98de944"
+    },
+    "-Ks3IvJh8up9HM7z6xdr" : {
+      "name" : "fagpraksis-frontend.png",
+      "progress" : 100,
+      "projectName" : "Ciber norge",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2Ffagpraksis-frontend.png?alt=media&token=c6ab2e53-840c-429c-872a-35c902ad9380"
+    },
+    "-KxIEcbquvIrJlQShuSM" : {
+      "name" : "Fiolin.pdf",
+      "progress" : 100,
+      "projectName" : "SVV fdgjfdlkjg dflkg mdfgl dfg",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FFiolin.pdf?alt=media&token=c7d034a5-1e73-494b-b570-6b0af6410794"
+    },
+    "-KxIEkbBi9MSfklOhFYC" : {
+      "name" : "Fiolin (1).pdf",
+      "progress" : 100,
+      "projectName" : "hh",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/ciber-trafikkjentene.appspot.com/o/uploads%2FFiolin%20(1).pdf?alt=media&token=70122249-2b7d-47bd-9752-2abb792a1f30"
+    }
+  }
+}

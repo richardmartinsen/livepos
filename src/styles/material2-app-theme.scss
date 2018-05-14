@@ -1,0 +1,63 @@
+@import '../../node_modules/@angular/material/theming';
+
+// Define custom color, based on #e9ac0d. 50 - 900 is worked out, the rest is not correct
+$tj-orange: (
+  50:  #e9a70d,
+  100: #e9a80d,
+  200: #e9a90d,
+  300: #e9aa0d,
+  400: #e9ab0d,
+  500: #e9ac0d,
+  600: #e9ae0d,
+  700: #e9af0d,
+  800: #e9b00d,
+  900: #e9b10d,
+  A100: #ffe57f,
+  A200: #ffd740,
+  A400: #ffc400,
+  A700: #ffab00,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $black-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+// Define the default theme
+$tj-primary: mat-palette($tj-orange);
+$tj-accent:  mat-palette($mat-grey, 1000);
+
+$tj-theme:   mat-light-theme($tj-primary, $tj-accent);
+
+// Include the default theme styles.
+@include angular-material-theme($tj-theme);
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-grey, 800);
+$dark-accent:  mat-palette($tj-orange);
+$dark-warn:    mat-palette($mat-deep-orange, 700, 500, 900);
+
+$tj-dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// Any component inside of an element with `.tj-app-dark` will be affected by this alternate
+// dark theme instead of the default theme.
+.tj-app-dark {
+  @include angular-material-theme($tj-dark-theme);
+}
+
