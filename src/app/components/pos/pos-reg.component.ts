@@ -8,6 +8,7 @@ import {AppComponent} from 'app/app.component';
 import {Pos, IPos} from '../../model/pos';
 
 import {PosFirebaseService} from '../../services/pos.firebase-service';
+import {AuthService} from '../../../auth/services/auth-service';
 
 @Component({
   templateUrl: './pos-reg.component.html',
@@ -20,40 +21,33 @@ export class PosRegComponent {
 
   constructor(public fb: FormBuilder,
               private posFirebaseService: PosFirebaseService,
+              private authService: AuthService,
               private snackBar: MdSnackBar) {
-
   }
 
+  mapPosition(position) { 
+      const p = new Pos;
+      p.lat = position.coords.latitude;
+      p.long = position.coords.longitude;
+      p.email = this.authService.getEmail();
+      return p;
+    }  
+
   start() {
-
     var getPosition = function (options) {
-
-      return new Promise(function (resolve, reject) {
-    
-        navigator.geolocation.getCurrentPosition(resolve, reject, options);
-    
-      });
-    
+      return new Promise(function (resolve, reject) {    
+        navigator.geolocation.getCurrentPosition(resolve, reject, options);    
+      });    
     }
   
     var options = {timeout:60000};
     
-    getPosition(options)
-    
+    getPosition(options)    
       .then((data) => {
-        console.log(data);
-        let pos = new Pos();
-    
-        let p = data;
-        console.log(p);
-        // console.log(data.coords.latitude);
-        // pos.lat = position.Position.timestamp;
-        // pos.long = position.coords.longitude;
-        pos.email = 'test@test.no';
-
-        console.log(pos);
-
-        this.posFirebaseService.create(pos).
+        // let pos = new Pos();
+        // pos.email = 'test@test.no';
+        // pos = this.mapPosition(data);    
+        this.posFirebaseService.create(this.mapPosition(data)).
         then( () => this.showSnackbarSaveOkMessage('lagret')).
         catch(error => {
           this.errorMessage = error.message;
@@ -67,30 +61,7 @@ export class PosRegComponent {
     
       });
     // navigator.geolocation.getCurrentPosition(this.showPosition);
-
-  
   }
-
-
-
-  // showPosition(position) {
-  // resolve(position) {
-  //   console.log('henter pos : ' + position.coords.latitude);
-  //   console.log('og : '+ position.coords.longitude);
-
-  //   // let pos = new Pos();
-    
-
-  //   // pos.email = 'test@test.no';
-
-  //   // console.log(pos);
-
-  //   // this.posFirebaseService.create(pos).
-  //   // then( () => this.showSnackbarSaveOkMessage('lagret')).
-  //   // catch(error => {
-  //   //   this.errorMessage = error.message;
-  //   // });
-  // }
 
   private showSnackbarSaveOkMessage(message: string) {
     this.snackBar.open('Lagret \'' + message + '\'', null, {
